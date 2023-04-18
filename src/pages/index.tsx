@@ -5,6 +5,7 @@ import Button from '@mui/material/Button'
 import { styled } from '@mui/material/styles';
 
 import Logo from "../../public/logo.svg";
+import Background from "../../public/background.gif";
 import Card from '@mui/material/Card';
 
 const inter = Inter({ subsets: ['latin'] })
@@ -13,19 +14,20 @@ const navbar_elements = [
   {text: "About", key: "AboutBtn", href: "#about"},
   {text: "Projects", key: "ProjectsBtn", href: "#projects"},
   {text: "Team", key: "TeamBtn", href: "#team"},
-  {text: "Support Us!", key: "SupportBtn", href: "#support_us"},
+  {text: "Sponsors", key: "SupportBtn", href: "#support_us"},
   {text: "Contact", key: "ContactBtn", href: "#contact"},
 ]
 
-const button_on_color = '#0062cc';
-const button_off_color = '#0063cc';
+const button_on_color = '#770000';
+const button_hover_color = '#8F0000';
+const button_off_color = '#780000';
 
 const NavbarButton = styled(Button)({
   boxShadow: 'none',
   textTransform: 'none',
   fontSize: 16,
   padding: '6px 12px',
-  border: '1px solid',
+  border: '0px',
   lineHeight: 1.5,
   backgroundColor: button_off_color,
   borderColor: button_off_color,
@@ -42,7 +44,7 @@ const NavbarButton = styled(Button)({
     '"Segoe UI Symbol"',
   ].join(','),
   '&:hover': {
-    backgroundColor: '#0069d9',
+    backgroundColor: button_hover_color,
     borderColor: button_on_color,
     boxShadow: 'none',
   },
@@ -50,36 +52,63 @@ const NavbarButton = styled(Button)({
     boxShadow: 'none',
     backgroundColor: button_on_color,
     // borderColor: '#005cbf',
-  },
-  '&:focus': {
-    boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
-  },
+  }
 });
 
+function rotated_content_bar(content: any) {
+  return <div>
+    <div className="rotated-background"></div>
+    <br/><br/>
+    { content }
+  </div>
+}
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-betsween p-10">
-      <div className="navbar">
-        <div className="logo">
+      {/* <img src="" className="gif" data-src={Background} alt=""/> */}
+
+      <div className="top-bar">
+        <div className="logo w-50vw">
           <Image
             priority
+            className="logo w-10vw"
             src={Logo}
-            width={100}
-            height={100}
+            width={200}
+            height={200}
             alt=""
           />
         </div>
-        <div className="navbar-flex-container">
-          {
-            navbar_elements.map( element => (
-              <div className="navbar-flex-child" key={element.key}>
-                <NavbarButton className="navbar-btn" variant="contained" href={element.href}> {element.text} </NavbarButton>
-              </div>
-            ))
-          }
+        <div className="navbar">
+          <div className='off-screen-navbar'></div>
+          <div className="navbar-flex-container">
+            {
+              navbar_elements.map( element => (
+                <NavbarButton className="navbar-btn" variant="contained" href={element.href} key={element.key}> {element.text} </NavbarButton>
+              ))
+            }
+          </div>
         </div>
       </div>
+      {/*
+      <script>
+        const gifs = document.querySelectorAll('.gif');
+        const observer = new IntersectionObserver(callback);
+        for (let i = 0; i < gifs.length; i++) {
+          observer.observe(gifs[i]);
+        }
+      </script>
+      */}
+
+      { rotated_content_bar(
+        <div>
+          <h1> About the Terraformers </h1>
+          <p>
+            Testing alsdfj asifja ofjiwej oaisdjfioae wjif 0owa jh;wofiijweji iqowea jifoiwj nteo iawh  asifnwauei nf iwauhe ifwahf uiaweh fuwiaehfei uhsa fiu iukahw nifuahbuiwenwa uiweahfuawe iuaefiwehhfia whwiau hia fehwa iuehwia ihew 9hapwiufhu weiwaihf iahfaw hiuweh aeuh iaewhu iiahe fpiewap faeuhfi weah fpai efapwh fuwge aiuef aiuefahif ehaei heufiwhf uwuwnfiuaw iu 
+          </p>
+        </div>
+      ) }
+      
     </main>
   )
 }

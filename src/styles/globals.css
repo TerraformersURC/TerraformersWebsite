@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+@font-face {
+  font-family: "Aldrich";
+  src: url("../../public/fonts/Aldrich-Regular.ttf");
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -17,6 +24,7 @@
 }
 
 body {
+  overflow-x: hidden;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -26,33 +34,52 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+.logo {
+  margin-right: 3rem;
+}
+
+.top-bar {
+  display: flex;
+  width: 100%;
+}
+
 .navbar {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
-  width: 100%
+  /* display: grid; */
+  /* grid-template-columns: 1fr; */
+  /* grid-gap: 20px; */
+  width: 100%;
+  float: right;
 }
 
 .navbar-flex-container {
   display: flex;
-}
-
-.navbar-flex-child { 
-  flex: 1;
+  width: 100%;
 }
 
 .navbar-btn {
-  white-space:nowrap;
+  flex: 1;
+  white-space: nowrap;
   width: 100%;
-  border-radius: 0px;
-}
+  height: 4ex;
+  border-radius: 0;
 
+  font-family: "Aldrich";
+  font-weight: 900;
+}
 /* Navbar endcap shapes */
-.navbar-flex-child:first-child .navbar-btn {
+.navbar-btn:first-child {
   border-radius: 10px 0px 0px 10px;
 }
-.navbar-flex-child:last-child .navbar-btn {
-  border-radius: 0px 10px 10px 0px;
+
+/* Navbar connect to right */
+.off-screen-navbar {
+  position: absolute;
+  top: 2.57rem;
+  right: 0;
+  height: 4ex;
+  width: 25%;
+  background-color: #770000;
+  border-color: #770000;
 }
 
 /* Navbar Lines */
@@ -64,6 +91,35 @@ body {
   width: 100%;
   border-right: 1px solid white;
 }
-.navbar-flex-child:last-child .navbar-btn:before {
+/* .navbar-flex-child:last-child .navbar-btn:before {
   border-right: 0px;
+} */
+
+.gif {
+  position: relative;
+  top: 150vh;
+  min-width: 1px;
+  min-height: 1px;
+  width: 20vh;
+  height: auto;
+}
+
+.rotated-background {
+  z-index: -1;
+  position: absolute;
+  right: -30%;
+  background-color: #77000086;
+  width: 200%;
+  height: 50ex;
+  transform: rotateZ(-4deg);
+}
+
+p {
+  font-family: "Aldrich";
+}
+
+h1 {
+  font-family: "Aldrich";
+  font-size: 2em;
+  text-align: center;
 }
