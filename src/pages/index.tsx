@@ -6,6 +6,12 @@ import { styled } from '@mui/material/styles';
 
 import Logo from "../../public/logo.svg";
 import Background from "../../public/background.gif";
+import RoverPngImg from "../../public/Rover.png";
+import Arm from "../../public/Arm.png";
+import Suspension from "../../public/Suspension.png";
+import TerraformersImg from "../../public/TerraformersImg.png";
+import OurRover from "../../public/OurRover.png"
+
 import Card from '@mui/material/Card';
 
 const inter = Inter({ subsets: ['latin'] })
@@ -57,9 +63,10 @@ const NavbarButton = styled(Button)({
 
 function rotated_content_bar(content: any) {
   return <div>
-    <div className="rotated-background"></div>
-    <br/><br/>
-    { content }
+    <div className="rotated-background">
+      <br/><br/>
+      { content }
+    </div>
   </div>
 }
 
@@ -103,12 +110,96 @@ export default function Home() {
       { rotated_content_bar(
         <div>
           <h1> About the Terraformers </h1>
-          <p>
-            Testing alsdfj asifja ofjiwej oaisdjfioae wjif 0owa jh;wofiijweji iqowea jifoiwj nteo iawh  asifnwauei nf iwauhe ifwahf uiaweh fuwiaehfei uhsa fiu iukahw nifuahbuiwenwa uiweahfuawe iuaefiwehhfia whwiau hia fehwa iuehwia ihew 9hapwiufhu weiwaihf iahfaw hiuweh aeuh iaewhu iiahe fpiewap faeuhfi weah fpai efapwh fuwge aiuef aiuefahif ehaei heufiwhf uwuwnfiuaw iu 
-          </p>
+          <div className="content-flex-container">
+            <Image
+              priority
+              className="content-img"
+              id="Rover"
+              src={RoverPngImg}
+              width={450}
+              height={450}
+              alt=""
+            />
+            <p>
+              <br/><br/><br/>
+              We’re a group of programmers, engineers, designers, and amateur scientists from UMD out to create a functional rover here on Earth. We’re competing in Utah in 2024 with other rovers from around the globe, and will hopefully bring back a win for UMD! 
+            </p>
+          </div>
         </div>
       ) }
+
+      <div className="vert-spcr"> </div>
+      <div>
+        <h1> Projects </h1>
+        <div className="content-flex-container">
+          <Image
+            priority
+            className="content-img"
+            id="suspension"
+            src={Suspension}
+            width={450}
+            height={450}
+            alt=""
+          />
+          <div  ></div>
+          <Image
+            priority
+            className="content-img"
+            id="arm"
+            src={Arm}
+            width={450}
+            height={450}
+            alt=""
+          />
+        </div>
+        <p> The Terraformers are constantly working to improve our rover and reach out to the community. Find out what we’re working on now here! </p>
+      </div>
       
+      <div className="vert-spcr"> </div>
+      { rotated_content_bar(
+        <div>
+          <h1> About the Terraformers </h1>
+          <Image
+            priority
+            className="content-img"
+            id="ter-img"
+            src={TerraformersImg}
+            width={450}
+            height={450}
+            alt=""
+          />
+          <p>
+            <br/><br/><br/>
+            We’re a group of programmers, engineers, designers, and amateur scientists from UMD out to create a functional rover here on Earth. We’re competing in Utah in 2024 with other rovers from around the globe, and will hopefully bring back a win for UMD! 
+          </p>
+
+          <div className="vert-spcr"> </div>
+        </div>
+      ) }
+
+      <div className="vert-spcr"> </div>
+      <h1> Support Us! </h1>
+      <div className="content-flex-container">
+        <Image
+          priority
+          className="content-img"
+          id="our-rover"
+          src={OurRover}
+          width={450}
+          height={450}
+          alt=""
+        />
+        <p>
+          <br/><br/><br/>
+          Making a fully functional Mars rover is no easy task, that’s why we need your help! Supporting our program via our tier system gets you increasingly cool rewards and helps keep the rover up and running.
+          
+        </p>
+      </div>
+      <div className="vert-spcr"> </div>
+      <h1> Contact Us </h1>
+      {/* TODO */}
+      <div className="vert-spcr"> </div>
+      <div className="vert-spcr"> </div>
     </main>
   )
 }

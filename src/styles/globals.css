@@ -104,22 +104,84 @@ body {
   height: auto;
 }
 
+
+
+/* Content CSS */
+
 .rotated-background {
   z-index: -1;
-  position: absolute;
-  right: -30%;
+  position: relative;
+  left: -10%;
   background-color: #77000086;
-  width: 200%;
-  height: 50ex;
+  width: 120%;
+  height: auto;
   transform: rotateZ(-4deg);
+  padding-left: 15%;
+  padding-right: 15%;
+}
+.rotated-background > * {
+  transform: rotateZ(4deg);
+}
+
+.content-flex-container {
+  display: flex;
+  text-align: center;
 }
 
 p {
+  flex: 1;
   font-family: "Aldrich";
+  display: inline;
+  text-align: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: large;
 }
 
 h1 {
   font-family: "Aldrich";
-  font-size: 2em;
+  font-size: 3em;
   text-align: center;
+}
+
+.content-img {
+  flex: 1;
+}
+
+.vert-spcr {
+  height: 5em;
+}
+
+#rover {
+  max-width: 35%;  
+  object-fit: cover;
+}
+
+#arm {
+  max-width: 32%;  
+  height: auto;
+  margin-right: 10%;
+  margin-left: 3%;
+  object-fit: cover;
+}
+
+#suspension {
+  max-width: 42%; 
+  height: auto;
+  margin-left: 10%;
+  margin-right: 3%;
+  object-fit: cover;
+}
+
+#ter-img {
+  margin-right: 20%;
+  margin-left: 20%;
+  height: 25em;
+  width: 60%;
+  object-fit: cover;
+}
+
+#our-rover {
+  max-width: 25%;
+  margin-left: 5%;
 }
