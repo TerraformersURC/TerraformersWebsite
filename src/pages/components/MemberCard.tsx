@@ -1,6 +1,5 @@
 import { Box, Card, CardContent, CardMedia, Typography, Divider, Paper, CardActions, Button } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import Draggable from "react-draggable";
 
 import { FaLinkedin, FaInstagram } from 'react-icons/fa';
 
@@ -8,10 +7,10 @@ const LinkedInIcon = () => <FaLinkedin size={32} />;
 const InstaIcon = () => <FaInstagram size={32} />;
 
 const CenterBox = styled(Box)({
-  display: "flex",
+  display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  minHeight: "100vh",
+  minHeight: "50vh",
 });
 
 const BlackCard = styled(Card)({
@@ -27,29 +26,27 @@ const BlackCardContent = styled(CardContent)({
   font:"Roboto"
 });
 
-export const Membercard = () => {
+export const Membercard = (props: any) => {
   return (
-    <Draggable>
     <CenterBox>
     <Box width='300px'>
       <BlackCard>
-        <CardMedia component='img' height='140' image='https://media.istockphoto.com/id/1364917563/photo/businessman-smiling-with-arms-crossed-on-white-background.jpg?s=612x612&w=0&k=20&c=NtM9Wbs1DBiGaiowsxJY6wNCnLf0POa65rYEwnZymrM='>
+        <CardMedia component='img' height='140' image={props.src}>
         </CardMedia>
         <BlackCardContent>
-        <Typography gutterBottom variant='h6' component='div'>Arjun</Typography>
+        <Typography gutterBottom variant='h6' component='div'> {props.name} </Typography>
         <Divider style={{ backgroundColor: 'white' }}/>
         <Typography variant='body2' color='white'>
-          Website Guy
+          {props.desc}
         </Typography>
         </BlackCardContent>
         <CardActions>
-        <LinkedInIcon />
-        <InstaIcon  />
+        <FaLinkedin size={32} href={props.linkedin}/>
+        <FaInstagram size={32} href={props.instagram}/>
         </CardActions>
       </BlackCard>
     </Box>
     </CenterBox>
-    </Draggable>
   );
 };
 
