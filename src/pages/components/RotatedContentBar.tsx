@@ -1,4 +1,4 @@
-export const RotatedContentBar = (props: any) => {
+export default function RotatedContentBar(props: any) {
     return (
         <div>
             <div className="rotated-background">
@@ -7,4 +7,4 @@ export const RotatedContentBar = (props: any) => {
             </div>
         </div>
     );
-};
+}

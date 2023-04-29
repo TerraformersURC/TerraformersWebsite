@@ -26,12 +26,12 @@ const BlackCardContent = styled(CardContent)({
   font:"Roboto"
 });
 
-export const Membercard = (props: any) => {
+export default function MemberCard(props: any) {
   return (
     <CenterBox>
     <Box width='300px'>
       <BlackCard>
-        <CardMedia component='img' height='140' image={props.src}>
+        <CardMedia className="card-img" component='img' height='140' image={props.src}>
         </CardMedia>
         <BlackCardContent>
         <Typography gutterBottom variant='h6' component='div'> {props.name} </Typography>
@@ -48,8 +48,8 @@ export const Membercard = (props: any) => {
     </Box>
     </CenterBox>
   );
-};
-
+}
+  
 
 
 

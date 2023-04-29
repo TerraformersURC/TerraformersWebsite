@@ -1,4 +1,6 @@
 
-export const VertSpacer = () => {
-    return (<div className="vert-spcr"></div>);
-};
+export default function VertSpacer() {
+    return (
+        <div className="vert-spcr"></div>
+    );
+} 

@@ -1,10 +1,10 @@
-import { Background } from "./components/Background";
-import { Navbar } from "./components/Navbar";
-import { Membercard } from "./components/MemberCard";
-import { VertSpacer } from "./components/VertSpacer";
-import { LearnMoreButton } from "./components/LearnMoreButton";
+import Background from "./components/Background";
+import Navbar from "./components/Navbar";
+import Membercard from "./components/MemberCard";
+import VertSpacer from "./components/VertSpacer";
+import LearnMoreButton from "./components/LearnMoreButton";
 
-import { RotatedContentBar } from "./components/RotatedContentBar";
+import RotatedContentBar from "./components/RotatedContentBar";
 
 import Image from "next/image";
 
@@ -13,16 +13,17 @@ import Arm from "../../public/Arm.png";
 import Suspension from "../../public/Suspension.png";
 import TerraformersImg from "../../public/WhoAreTheTerraformers.png";
 import OurRover from "../../public/OurRover.png";
-import { MemberExplorer } from "./components/MemberExplorer";
+import MemberExplorer from "./components/MemberExplorer";
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-betsween p-10">
+      <div id="home"></div>
       <Navbar/>
 
       <RotatedContentBar>
-        <h1> About the Terraformers </h1>
-        <div className="content-flex-container">
+        <h1 id="about"> About the Terraformers </h1>
+        <div className="content-flex-container" id="about">
           <Image
             priority
             className="content-img"
@@ -41,7 +42,7 @@ export default function Home() {
 
       <VertSpacer/>
       <div>
-        <h1> Projects </h1>
+        <h1 id="projects"> Projects </h1>
         <div className="content-flex-container">
           <Image
             priority
@@ -52,7 +53,7 @@ export default function Home() {
             height={450}
             alt=""
           />
-          <div  ></div>
+          <div></div>
           <Image
             priority
             className="content-img"
@@ -71,6 +72,7 @@ export default function Home() {
       
       <VertSpacer/>
       <RotatedContentBar>
+        <div id="team"></div>
         <Image
           priority
           className="content-img"
@@ -92,7 +94,7 @@ export default function Home() {
       </RotatedContentBar>
 
       <div className="vert-spcr"> </div>
-      <h1> Support Us! </h1>
+      <h1 id="support"> Support Us! </h1>
       <div className="content-flex-container">
         <Image
           priority
@@ -113,9 +115,9 @@ export default function Home() {
         </div>
       </div>
       <VertSpacer/>
-      <h1> Contact Us </h1>
+      <h1 id="contact"> Contact Us </h1>
       <p>
-        You can reach us at ____
+        You can reach us at terraformers@terraformers.tech
       </p>
       <VertSpacer/>
       <VertSpacer/>
