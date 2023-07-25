@@ -1,5 +1,5 @@
-import Background from "./components/Background";
-import Navbar from "./components/Navbar";
+import Background from "./components/background";
+import Navbar from "./components/navbar";
 import Membercard from "./components/MemberCard";
 import VertSpacer from "./components/VertSpacer";
 import LearnMoreButton from "./components/LearnMoreButton";
@@ -8,17 +8,26 @@ import RotatedContentBar from "./components/RotatedContentBar";
 
 import Image from "next/image";
 
-import RoverPngImg from "../../public/Rover.png";
+import Rover from "../../public/Rover.png";
 import Arm from "../../public/Arm.png";
 import Suspension from "../../public/Suspension.png";
 import TerraformersImg from "../../public/WhoAreTheTerraformers.png";
 import OurRover from "../../public/OurRover.png";
 import MemberExplorer from "./components/MemberExplorer";
+import Head from "next/head";
+
+import dynamic from 'next/dynamic'
+
+const DynamicHeader = dynamic(() => import('./components/header'), {
+  loading: () => <p>Loading...</p>,
+})
 
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-betsween p-10">
-      <div id="home"></div>
+      <DynamicHeader/>
+
+      <div id="home"/>
       <Navbar/>
 
       <RotatedContentBar>
@@ -28,7 +37,7 @@ export default function Home() {
             priority
             className="content-img"
             id="Rover"
-            src={RoverPngImg}
+            src={Rover}
             width={450}
             height={450}
             alt=""
@@ -89,8 +98,12 @@ export default function Home() {
           </p>
         </div>
         <VertSpacer/>
-        <MemberExplorer/>
+        
         <div className="vert-spcr"> </div>
+
+        <MemberExplorer/>
+        <VertSpacer/>
+        <VertSpacer/>
       </RotatedContentBar>
 
       <div className="vert-spcr"> </div>

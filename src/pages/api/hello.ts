@@ -2,12 +2,29 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data = {
-  name: string
+  people: [Person],
+}
+
+type Person = {
+  name: string,
+  img_url: string, /* URL */
+  info: string,
+  instagram: String,
+  linkedin: string,
 }
 
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
 ) {
-  res.status(200).json({ name: 'John Doe' })
+  res.status(200).json({ people: [
+      {
+        name: "Lucas Ballmer", 
+        img_url: "TODO", 
+        info: "Dev", 
+        instagram: "None", 
+        linkedin: "None"
+      }
+    ]
+  })
 }

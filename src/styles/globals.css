@@ -39,20 +39,36 @@ body {
 }
 
 .logo {
+
+  background-color: #00000000;
+  top: 0;
+  left: 0;
+  /* top: translate(-1.6rem, -1.6rem); */
+  z-index: 10;
   margin-right: 3rem;
+  background-color: #770000;
+  border-color: #770000;
+  border-radius: 0 0 100% 100%;
+  border-width: 10px;
+  position: fixed;
 }
 
 .top-bar {
   display: flex;
   width: 100%;
+  /* position: fixed; */
 }
 
 .navbar {
+  z-index: 5;
   /* display: grid; */
   /* grid-template-columns: 1fr; */
   /* grid-gap: 20px; */
-  width: 100%;
-  float: right;
+  width: 85%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  overflow-x: scroll;
 }
 
 .navbar-flex-container {
@@ -61,6 +77,7 @@ body {
 }
 
 .navbar-btn {
+  z-index: 9;
   flex: 1;
   white-space: nowrap;
   width: 100%;
@@ -76,13 +93,16 @@ body {
   border-radius: 10px 0px 0px 10px;
 }
 
+
 /* Navbar connect to right */
 .off-screen-navbar {
-  position: absolute;
-  top: 2.5rem;
+  z-index: 0;
+  position: fixed;
+  /* top: 2.5rem */
+  top: 0;
   right: 0;
   height: 4ex;
-  width: 25%;
+  width: 1025%;
   background-color: #770000;
   border-color: #770000;
 }
@@ -95,10 +115,11 @@ body {
   height  : 65%;
   width: 100%;
   border-right: 1px solid white;
+  word-wrap: break-word
 }
-/* .navbar-flex-child:last-child .navbar-btn:before {
+.navbar-flex-child:last-child {
   border-right: 0px;
-} */
+}
 
 .gif {
   position: relative;
@@ -110,19 +131,19 @@ body {
 }
 
 
-
 /* Content CSS */
 
 .rotated-background {
   z-index: -1;
-  position: relative;
-  left: -10%;
+
   background-color: #77000086;
-  width: 120%;
+  width: 140%;
   height: auto;
-  transform: rotateZ(-4deg);
+  transform: rotateZ(-4deg) translate(-10%);
   padding-left: 15%;
-  padding-right: 15%;
+  padding-right: 25%;
+
+  overflow: hidden;
 }
 .rotated-background > * {
   transform: rotateZ(4deg);
@@ -179,7 +200,6 @@ h1 {
 }
 
 #ter-img {
-
   margin-right: 22%;
   margin-left: 22%;
   
@@ -215,12 +235,15 @@ h1 {
   width: 90vw;
   border-radius: 10px;
   background-color: #77000086;
-  overflow-x: scroll;
   text-align: center;
 
   padding: 2em;
 
-  transform: translate(-5vw, 0) rotateZ(4deg);
+  /* transform: position(5vw, 0) rotateZ(4deg); */
+  
+  margin-left: -.5rem;  
+
+  overflow-x: scroll;
 }
 
 #home {

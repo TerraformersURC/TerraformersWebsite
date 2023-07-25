@@ -8,7 +8,7 @@ import Logo from "../../../public/logo.svg";
 
 const inter = Inter({ subsets: ['latin'] })
 const navbar_elements = [
-  {text: "Home", key: "HomeBtn", href: "#home", scroll: "home"},
+  // {text: "Home", key: "HomeBtn", href: "#home", scroll: "home"},
   {text: "About", key: "AboutBtn", href: "#about", scroll: "about"},
   {text: "Projects", key: "ProjectsBtn", href: "#projects", scroll: "about"},
   {text: "Team", key: "TeamBtn", href: "#team", scroll: "team"},
@@ -26,6 +26,7 @@ const NavbarButton = styled(Button)({
   fontSize: 16,
   padding: '6px 12px',
   border: '0px',
+  borderRadius: '0px',
   lineHeight: 1.5,
   backgroundColor: button_off_color,
   borderColor: button_off_color,

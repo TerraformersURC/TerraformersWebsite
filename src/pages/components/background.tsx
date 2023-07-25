@@ -12,7 +12,7 @@ export default function Background() {
       {/*
       <script>
           const gifs = document.querySelectorAll('.gif');
-          const observer = new IntersectionObserver(callback);
+          const observer = new IntersectiionObserver(callback);
           for (let i = 0; i < gifs.length; i++) {
           observer.observe(gifs[i]);
           }
