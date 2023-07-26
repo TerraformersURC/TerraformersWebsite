@@ -18,9 +18,39 @@ import Head from "next/head";
 
 import dynamic from 'next/dynamic'
 
+import { useState, useEffect } from 'react'
+
+import Script from 'next/script'
+
 const DynamicHeader = dynamic(() => import('./components/header'), {
   loading: () => <p>Loading...</p>,
 })
+
+// // Check if you are on a phone
+// export function on_phone() { 
+//   const [windowSize, setWindowSize] = useState({
+//     width: undefined,
+//     height: undefined,
+//   });
+
+//   useEffect(() => {
+//     function handleResize() {
+//       setWindowSize({
+//         width: window.innerWidth,
+//         height: window.innerHeight,
+//       });
+//     }
+  
+//     window.addEventListener("resize", handleResize);
+
+//     handleResize();
+
+//     return () => window.removeEventListener("resize", handleResize);
+//   }, []);
+
+//   return windowSize.height != undefined && windowSize.width != undefined 
+//     && windowSize.height > windowSize.width;
+// }
 
 export default function Home() {
   return (
@@ -30,6 +60,9 @@ export default function Home() {
       <div id="home"/>
       <Navbar/>
 
+      
+      {/* Computer View */}
+      <div className="computer-view">
       <RotatedContentBar>
         <h1 id="about"> About the Terraformers </h1>
         <div className="content-flex-container" id="about">
@@ -47,7 +80,49 @@ export default function Home() {
             We’re a group of programmers, engineers, designers, and amateur scientists from UMD out to create a functional rover here on Earth. We’re competing in Utah in 2024 with other rovers from around the globe, and will hopefully bring back a win for UMD! 
           </p>
         </div>
+      </RotatedContentBar> 
+      </div>
+      {/* Phone View */}
+      <div className="phone-view">
+      <RotatedContentBar>
+        <h1 id="about"> About the Terraformers </h1>
+        <Image
+            priority
+            className="content-img"
+            id=""
+            src={Rover}
+            width={450}
+            height={450}
+            alt=""
+          />
+        <div className="content-flex-container" id="about">
+          <p id="Tmp">
+            <br/><br/><br/>
+            We’re a group of programmers, engineers, designers, and amateur scientists from UMD out to create a functional rover here on Earth. We’re competing in Utah in 2024 with other rovers from around the globe, and will hopefully bring back a win for UMD! 
+          </p>
+        </div>
+        <VertSpacer/>
       </RotatedContentBar>
+      </div>
+
+      <Script id="some-id"> 
+        {`
+          var list_phone = document.getElementsByClassName("phone-view");
+          var list_computer = document.getElementsByClassName("computer-view");
+        
+          if (window.innerHeight > window.innerWidth) {
+            for (var i = 0; i < list_phone.length; i++) {
+              list_phone[i].style.display = "show";
+              list_computer[i].style.display = "none";
+            }
+          } else {
+            for (var i = 0; i < list_phone.length; i++) {
+              list_phone[i].style.display = "none";
+              list_computer[i].style.display = "show";
+            }
+          }
+        `}
+      </Script>
 
       <VertSpacer/>
       <div>
@@ -91,7 +166,7 @@ export default function Home() {
           height={450}
           alt=""
         />
-        <div>
+        <div id="who-are-we" >
           <p>
             <br/><br/>
             We’re a group of programmers, engineers, designers, and amateur scientists from UMD out to create a functional rover here on Earth. We’re competing in Utah in 2024 with other rovers from around the globe, and will hopefully bring back a win for UMD! 

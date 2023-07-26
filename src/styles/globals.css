@@ -39,7 +39,7 @@ body {
 }
 
 .logo {
-
+  width: 10%;
   background-color: #00000000;
   top: 0;
   left: 0;
@@ -253,4 +253,17 @@ h1 {
 .card-img {
   height: auto;
   object-fit: cover;
+}
+
+.who-are-we {
+  text-align: center;
+  width: 50vw;
+}
+
+.phone-view {
+
+}
+
+.computer-view {
+  
 }
