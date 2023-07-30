@@ -22,36 +22,236 @@ import { useState, useEffect } from 'react'
 
 import Script from 'next/script'
 
+/** Dynamic headers */
 const DynamicHeader = dynamic(() => import('./components/header'), {
   loading: () => <p>Loading...</p>,
 })
 
-// // Check if you are on a phone
-// export function on_phone() { 
-//   const [windowSize, setWindowSize] = useState({
-//     width: undefined,
-//     height: undefined,
-//   });
+/* Utility Functions */
 
-//   useEffect(() => {
-//     function handleResize() {
-//       setWindowSize({
-//         width: window.innerWidth,
-//         height: window.innerHeight,
-//       });
-//     }
+/* Page Sections */
+
+/** About Section */
+export function AboutSection() {
+  const [onPhone, _setOnPhone] = useState(true);
+
+  useEffect(() => {
+    function handleResize() {
+      _setOnPhone(window.innerHeight > window.innerWidth);
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  return !onPhone ? 
+    <RotatedContentBar> { /* Computer View */}
+      <h1 id="about"> About the Terraformers </h1>
+
+      <div className="content-flex-container">
+        <Image
+          priority
+          className="content-img"
+          id= "Rover"
+          src={Rover}
+          width={450}
+          height={450}
+          alt=""
+        />
+
+        <p>
+          <br/><br/><br/>
+          We’re a group of programmers, engineers, designers, and amateur scientists from UMD out to 
+          create a functional rover here on Earth. We’re competing in Utah in 2024 with other rovers 
+          from around the globe, and will hopefully bring back a win for UMD! 
+        </p>
+      </div>
+    </RotatedContentBar>
+      :
+    <RotatedContentBar> { /* Phone View */}
+      <h1 id="about"> About the Terraformers </h1>
+
+      <Image
+        priority
+        className="content-img"
+        id= "Rover"
+        src={Rover}
+        width={450}
+        height={450}
+        alt=""
+      />
+
+      <div>
+        <p>
+          <br/><br/><br/>
+          We’re a group of programmers, engineers, designers, and amateur scientists from UMD out to
+          create a functional rover here on Earth. We’re competing in Utah in 2024 with other rovers 
+          from around the globe, and will hopefully bring back a win for UMD! 
+        </p>
+      </div>
+      <VertSpacer/>
+    </RotatedContentBar>;
+}
+
+/** Projects Section */
+export function ProjectsSection() {
+  return (
+    <div>
+      <h1 id="projects"> Projects </h1>
+      <div className="content-flex-container">
+        <Image
+          priority
+          className="content-img"
+          id="suspension"
+          src={Suspension}
+          width={450}
+          height={450}
+          alt=""
+        />
+        <div></div>
+        <Image
+          priority
+          className="content-img"
+          id="arm"
+          src={Arm}
+          width={450}
+          height={450}
+          alt=""
+        />
+      </div>
+      <p>
+        <br/>
+        The Terraformers are constantly working to improve our rover and reach out to the community. 
+        Find out what we’re working on now here!
+      </p>
+    </div>
+  );
+}
+
+/** Team Section */
+export function TeamSection() {
+  return (
+    <RotatedContentBar>
+      <div id="team"/>
+
+      <div style={{textAlign: "center", width: "100%"}}>
+        <div style={{paddingLeft: "10%", paddingRight: "10%"}}>
+          <Image
+            priority
+            className="content-img"
+            style={{width: "80vw"}}
+            src={TerraformersImg}
+            width={1060}
+            height={196}
+            alt=""
+          />
+        </div>
+        
+        <div id="who-are-we">
+          <p>
+            <br/><br/>
+            We’re a group of programmers, engineers, designers, and amateur scientists from UMD 
+            out to create a functional rover here on Earth. We’re competing in Utah in 2024 with 
+            other rovers from around the globe, and will hopefully bring back a win for UMD! 
+          </p>
+        </div>
+      </div>
+      <VertSpacer/>
+
+      <div style={{paddingLeft: "2rem", paddingRight: "2rem"}}>
+        <MemberExplorer/>
+      </div>
+      <VertSpacer/>
+      <VertSpacer/>
+    </RotatedContentBar>
+  );
+}
+
+/** Support Section */
+export function SupportSection() {
+  const [onPhone, _setOnPhone] = useState(true);
+
+  useEffect(() => {
+    function handleResize() {
+      _setOnPhone(window.innerHeight > window.innerWidth);
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   
-//     window.addEventListener("resize", handleResize);
+  return (
+    <div>
+      <h1 id="support"> Support Us! </h1>
+      { onPhone ?
+        <div>
+          <Image
+            priority
+            className="content-img"
+            src={OurRover}
+            width={450}
+            height={450}
+            alt=""
+          />
+          <div>
+            <p>
+              <br/><br/><br/>
+              Making a fully functional Mars rover is no easy task, that’s why we need your help! 
+              Supporting our program via our tier system gets you increasingly cool rewards and 
+              helps keep the rover up and running.
+            </p>
+            {/* <VertSpacer/>
+            <LearnMoreButton text="Learn more"/> */}
+          </div>
+        </div>
+         :
+        <div className="content-flex-container">
+          <Image
+            priority
+            className="content-img"
+            id="our-rover"
+            src={OurRover}
+            width={450}
+            height={450}
+            alt=""
+          />
+          <div>
+            <p>
+              <br/><br/><br/>
+              Making a fully functional Mars rover is no easy task, that’s why we need your help! 
+              Supporting our program via our tier system gets you increasingly cool rewards and 
+              helps keep the rover up and running.
+            </p>
+            {/* <VertSpacer/>
+            <LearnMoreButton text="Learn more"/> */}
+          </div>
+        </div>
+      }
+    </div>
+  );
+}
 
-//     handleResize();
+/** Contacts Section
+ * Our contact information.
+ */
+export function ContactsSection() {
+  return (
+    <div style={{width: "100%", textAlign: "center"}}>
+      <h1 id="contact"> Contact Us </h1>
+      <p>
+        You can reach us at terraformers@terraformers.tech
+      </p>
+    </div>
+  );
+}
 
-//     return () => window.removeEventListener("resize", handleResize);
-//   }, []);
-
-//   return windowSize.height != undefined && windowSize.width != undefined 
-//     && windowSize.height > windowSize.width;
-// }
-
+/** Layout of the home page */
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-betsween p-10">
@@ -60,165 +260,23 @@ export default function Home() {
       <div id="home"/>
       <Navbar/>
 
+      <AboutSection/>
+      <VertSpacer/>
       
-      {/* Computer View */}
-      <div className="computer-view">
-      <RotatedContentBar>
-        <h1 id="about"> About the Terraformers </h1>
-        <div className="content-flex-container" id="about">
-          <Image
-            priority
-            className="content-img"
-            id="Rover"
-            src={Rover}
-            width={450}
-            height={450}
-            alt=""
-          />
-          <p>
-            <br/><br/><br/>
-            We’re a group of programmers, engineers, designers, and amateur scientists from UMD out to create a functional rover here on Earth. We’re competing in Utah in 2024 with other rovers from around the globe, and will hopefully bring back a win for UMD! 
-          </p>
-        </div>
-      </RotatedContentBar> 
-      </div>
-      {/* Phone View */}
-      <div className="phone-view">
-      <RotatedContentBar>
-        <h1 id="about"> About the Terraformers </h1>
-        <Image
-            priority
-            className="content-img"
-            id=""
-            src={Rover}
-            width={450}
-            height={450}
-            alt=""
-          />
-        <div className="content-flex-container" id="about">
-          <p id="Tmp">
-            <br/><br/><br/>
-            We’re a group of programmers, engineers, designers, and amateur scientists from UMD out to create a functional rover here on Earth. We’re competing in Utah in 2024 with other rovers from around the globe, and will hopefully bring back a win for UMD! 
-          </p>
-        </div>
-        <VertSpacer/>
-      </RotatedContentBar>
-      </div>
-
-      <Script id="some-id"> 
-        {`
-          var list_phone = document.getElementsByClassName("phone-view");
-          var list_computer = document.getElementsByClassName("computer-view");
-        
-          if (window.innerHeight > window.innerWidth) {
-            for (var i = 0; i < list_phone.length; i++) {
-              list_phone[i].style.display = "show";
-              list_computer[i].style.display = "none";
-            }
-          } else {
-            for (var i = 0; i < list_phone.length; i++) {
-              list_phone[i].style.display = "none";
-              list_computer[i].style.display = "show";
-            }
-          }
-        `}
-      </Script>
-
+      <ProjectsSection/>
       <VertSpacer/>
-      <div>
-        <h1 id="projects"> Projects </h1>
-        <div className="content-flex-container">
-          <Image
-            priority
-            className="content-img"
-            id="suspension"
-            src={Suspension}
-            width={450}
-            height={450}
-            alt=""
-          />
-          <div></div>
-          <Image
-            priority
-            className="content-img"
-            id="arm"
-            src={Arm}
-            width={450}
-            height={450}
-            alt=""
-          />
-        </div>
-        <p>
-          <br/>
-          The Terraformers are constantly working to improve our rover and reach out to the community. Find out what we’re working on now here!
-        </p>
-      </div>
+
+      <TeamSection/>
+      <VertSpacer/>
       
-      <VertSpacer/>
-      <RotatedContentBar>
-        <div id="team"></div>
-        <Image
-          priority
-          className="content-img"
-          id="ter-img"
-          src={TerraformersImg}
-          width={450}
-          height={450}
-          alt=""
-        />
-        <div id="who-are-we" >
-          <p>
-            <br/><br/>
-            We’re a group of programmers, engineers, designers, and amateur scientists from UMD out to create a functional rover here on Earth. We’re competing in Utah in 2024 with other rovers from around the globe, and will hopefully bring back a win for UMD! 
-          </p>
-        </div>
-        <VertSpacer/>
-        
-        <div className="vert-spcr"> </div>
-
-        <MemberExplorer/>
-        <VertSpacer/>
-        <VertSpacer/>
-      </RotatedContentBar>
-
-      <div className="vert-spcr"> </div>
-      <h1 id="support"> Support Us! </h1>
-      <div className="content-flex-container">
-        <Image
-          priority
-          className="content-img"
-          id="our-rover"
-          src={OurRover}
-          width={450}
-          height={450}
-          alt=""
-        />
-        <div className="f1">
-          <p>
-            <br/><br/><br/>
-            Making a fully functional Mars rover is no easy task, that’s why we need your help! Supporting our program via our tier system gets you increasingly cool rewards and helps keep the rover up and running.
-          </p>
-          <VertSpacer/>
-          <LearnMoreButton text="Learn more"/>
-        </div>
-      </div>
-      <VertSpacer/>
-      <h1 id="contact"> Contact Us </h1>
-      <p>
-        You can reach us at terraformers@terraformers.tech
-      </p>
-      <VertSpacer/>
+      <SupportSection/>
       <VertSpacer/>
 
+      <ContactsSection/>
+
+      <VertSpacer/>
+      <VertSpacer/>
       <Background/>
-    </main>
-  )
-}
-
-export function Team() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-betsween p-10">
-      
     </main>
   )
 }

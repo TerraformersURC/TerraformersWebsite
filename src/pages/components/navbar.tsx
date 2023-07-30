@@ -5,6 +5,7 @@ import { Inter } from 'next/font/google'
 import { styled } from '@mui/material/styles';
 
 import Logo from "../../../public/logo.svg";
+import { useEffect, useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
 const navbar_elements = [
@@ -48,19 +49,42 @@ function scroll_to(scroll: any) {
     elem.scrollIntoView()
 }
 
+
 export default function Navbar() {
+  const [logoIsHidden, setLogoIsHidden] = useState(false);
+
+  const listenToScroll = () => {
+    let heightToHideFrom = 10;
+    const winScroll = document.body.scrollTop ||
+        document.documentElement.scrollTop;
+
+    if (winScroll > heightToHideFrom) {
+      setLogoIsHidden(true);
+    } else {
+      setLogoIsHidden(false);
+    }
+  };
+
+  useEffect(() => {   
+    window.addEventListener("scroll", listenToScroll);
+    return () => 
+       window.removeEventListener("scroll", listenToScroll); 
+  }, [])
+
   return (
     <div className="top-bar">
-      <div className="logo w-50vw">
-        <Image
-        priority
-        className="logo w-10vw"
-        src={Logo}
-        width={200}
-        height={200}
-        alt=""
-        />
-      </div>
+      { logoIsHidden ? <></> :
+        <div className="logo w-50vw">
+          <Image
+          priority
+          className="logo w-10vw"
+          src={Logo}
+          width={200}
+          height={200}
+          alt=""
+          />
+        </div>
+      }
       <div className="navbar">
         <div className='off-screen-navbar'></div>
         <div className="navbar-flex-container">
@@ -74,4 +98,3 @@ export default function Navbar() {
     </div>
   )
 }
-        
