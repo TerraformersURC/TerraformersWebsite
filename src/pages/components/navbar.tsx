@@ -49,27 +49,26 @@ function scroll_to(scroll: any) {
     elem.scrollIntoView()
 }
 
-
 export default function Navbar() {
   const [logoIsHidden, setLogoIsHidden] = useState(false);
 
-  const listenToScroll = () => {
-    let heightToHideFrom = 10;
-    const winScroll = document.body.scrollTop ||
-        document.documentElement.scrollTop;
+  // const listenToScroll = () => {
+  //   let heightToHideFrom = 10;
+  //   const winScroll = document.body.scrollTop ||
+  //       document.documentElement.scrollTop;
 
-    if (winScroll > heightToHideFrom) {
-      setLogoIsHidden(true);
-    } else {
-      setLogoIsHidden(false);
-    }
-  };
+  //   if (winScroll > heightToHideFrom) {
+  //     setLogoIsHidden(true);
+  //   } else {
+  //     setLogoIsHidden(false);
+  //   }
+  // };
 
-  useEffect(() => {   
-    window.addEventListener("scroll", listenToScroll);
-    return () => 
-       window.removeEventListener("scroll", listenToScroll); 
-  }, [])
+  // useEffect(() => {   
+  //   window.addEventListener("scroll", listenToScroll);
+  //   return () => 
+  //      window.removeEventListener("scroll", listenToScroll); 
+  // }, [])
 
   return (
     <div className="top-bar">

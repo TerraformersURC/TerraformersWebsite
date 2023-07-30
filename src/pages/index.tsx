@@ -86,7 +86,7 @@ export function AboutSection() {
 
       <div>
         <p>
-          <br/><br/><br/>
+          <br/><br/>
           We’re a group of programmers, engineers, designers, and amateur scientists from UMD out to
           create a functional rover here on Earth. We’re competing in Utah in 2024 with other rovers 
           from around the globe, and will hopefully bring back a win for UMD! 
@@ -137,7 +137,7 @@ export function TeamSection() {
     <RotatedContentBar>
       <div id="team"/>
 
-      <div style={{textAlign: "center", width: "100%"}}>
+      <div style={{textAlign: "center", width: "100%", marginRight: "1rem"}}>
         <div style={{paddingLeft: "10%", paddingRight: "10%"}}>
           <Image
             priority
@@ -150,7 +150,7 @@ export function TeamSection() {
           />
         </div>
         
-        <div id="who-are-we">
+        <div id="who-are-we" style={{marginRight: "1rem"}}>
           <p>
             <br/><br/>
             We’re a group of programmers, engineers, designers, and amateur scientists from UMD 
@@ -161,7 +161,7 @@ export function TeamSection() {
       </div>
       <VertSpacer/>
 
-      <div style={{paddingLeft: "2rem", paddingRight: "2rem"}}>
+      <div style={{paddingLeft: "2rem", paddingRight: "3rem"}}>
         <MemberExplorer/>
       </div>
       <VertSpacer/>
@@ -259,6 +259,8 @@ export default function Home() {
 
       <div id="home"/>
       <Navbar/>
+
+      <VertSpacer/>
 
       <AboutSection/>
       <VertSpacer/>
