@@ -152,7 +152,7 @@ export function TeamSection() {
         
         <div id="who-are-we" style={{marginRight: "1rem"}}>
           <p>
-            <br/><br/>
+            <br/><br/><br/>
             We’re a group of programmers, engineers, designers, and amateur scientists from UMD 
             out to create a functional rover here on Earth. We’re competing in Utah in 2024 with 
             other rovers from around the globe, and will hopefully bring back a win for UMD! 

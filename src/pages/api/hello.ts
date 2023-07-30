@@ -1,11 +1,14 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+/**
+ * hello traveler
+ * This is the API for the terraformers URC rover team.
+ */
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data = {
-  people: Person[],
+  people: Member[],
 }
 
-type Person = {
+type Member = {
   name: string,
   desc: string,
   linkedin: string,
