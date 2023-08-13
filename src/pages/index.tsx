@@ -23,8 +23,12 @@ import { useState, useEffect } from 'react'
 import Script from 'next/script'
 
 /** Dynamic headers */
-const DynamicHeader = dynamic(() => import('./components/header'), {
+export const DynamicHeader = dynamic(() => import('./components/header'), {
   loading: () => <p>Loading...</p>,
+})
+
+export const DynamicFooter = dynamic(() => import('./components/footer'), {
+  loading: () => <p>...</p>,
 })
 
 /* Utility Functions */
@@ -227,6 +231,8 @@ export function SupportSection() {
               Making a fully functional Mars rover is no easy task, that’s why we need your help! 
               Supporting our program via our tier system gets you increasingly cool rewards and 
               helps keep the rover up and running.
+              <br/><br/>
+              Sponsors get 501c3 tax benefits.
             </p>
             {/* <VertSpacer/>
             <LearnMoreButton text="Learn more"/> */}
@@ -257,11 +263,6 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-betsween p-10">
       <DynamicHeader/>
 
-      <div id="home"/>
-      <Navbar/>
-
-      <VertSpacer/>
-
       <AboutSection/>
       <VertSpacer/>
       
@@ -272,13 +273,8 @@ export default function Home() {
       <VertSpacer/>
       
       <SupportSection/>
-      <VertSpacer/>
 
-      <ContactsSection/>
-
-      <VertSpacer/>
-      <VertSpacer/>
-      <Background/>
+      <DynamicFooter/>
     </main>
   )
 }

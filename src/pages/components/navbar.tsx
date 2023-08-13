@@ -9,12 +9,10 @@ import { useEffect, useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
 const navbar_elements = [
-  // {text: "Home", key: "HomeBtn", href: "#home", scroll: "home"},
-  {text: "About", key: "AboutBtn", href: "#about", scroll: "about"},
-  {text: "Projects", key: "ProjectsBtn", href: "#projects", scroll: "about"},
-  {text: "Team", key: "TeamBtn", href: "#team", scroll: "team"},
-  {text: "Sponsors", key: "SupportBtn", href: "#support_us", scroll: "support"},
-  {text: "Contact", key: "ContactBtn", href: "#contact", scroll: "contact"},
+  {text: "Home", key: "HomeBtn", href: "/", scroll: "home"},
+  {text: "Projects", key: "ProjectsBtn", href: "projects", scroll: "about"},
+  {text: "Team", key: "TeamBtn", href: "team", scroll: "team"},
+  {text: "Sponsors", key: "SupportBtn", href: "support", scroll: "support"},
 ]
 
 const button_on_color = '#770000';
@@ -75,12 +73,12 @@ export default function Navbar() {
       { logoIsHidden ? <></> :
         <div className="logo w-50vw">
           <Image
-          priority
-          className="logo w-10vw"
-          src={Logo}
-          width={200}
-          height={200}
-          alt=""
+            priority
+            className="logo w-10vw"
+            src={Logo}
+            width={200}
+            height={200}
+            alt=""
           />
         </div>
       }

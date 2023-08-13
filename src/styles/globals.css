@@ -6,6 +6,7 @@
 
 @font-face {
   font-family: "Aldrich";
+  color: #ddd;
   src: url("../../public/fonts/Aldrich-Regular.ttf");
 }
 
@@ -259,12 +260,4 @@ h1 {
 .who-are-we {
   text-align: center;
   width: 50vw;
-}
-
-.phone-view {
-
-}
-
-.computer-view {
-  
 }
