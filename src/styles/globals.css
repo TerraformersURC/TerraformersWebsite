@@ -6,7 +6,6 @@
 
 @font-face {
   font-family: "Aldrich";
-  color: #ddd;
   src: url("../../public/fonts/Aldrich-Regular.ttf");
 }
 
@@ -26,7 +25,8 @@
 
 body {
   overflow-x: hidden;
-  color: rgb(var(--foreground-rgb));
+  /* color: rgb(var(--foreground-rgb)); */
+  color: #ddd;
   /* background: linear-gradient(
       to bottom,
       transparent,
