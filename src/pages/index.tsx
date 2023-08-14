@@ -63,6 +63,7 @@ export function AboutSection() {
           src={Rover}
           width={450}
           height={450}
+          style={{objectFit: 'cover'}}
           alt=""
         />
 

@@ -1,6 +1,7 @@
 # Terraformers Website
 
 This is the official terraformers website located at [terraformers.tech](terraformers.tech)
+
 ## Getting Started
 
 First, run the development server:
