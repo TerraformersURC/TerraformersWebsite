@@ -144,8 +144,8 @@ body {
   left: -10vw;
   transform: rotateZ(-4deg);
 
-  padding-left: 20vw;
-  padding-right: 20vw;
+  padding-left: 25vw;
+  padding-right: 25vw;
 
   overflow: hidden;
 }

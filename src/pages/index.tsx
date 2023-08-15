@@ -21,6 +21,7 @@ import dynamic from 'next/dynamic'
 import { useState, useEffect } from 'react'
 
 import Script from 'next/script'
+import Link from "next/link";
 
 /** Dynamic headers */
 export const DynamicHeader = dynamic(() => import('./components/header'), {
@@ -127,11 +128,13 @@ export function ProjectsSection() {
           alt=""
         />
       </div>
-      <p>
-        <br/>
-        The Terraformers are constantly working to improve our rover and reach out to the community. 
-        Find out what we’re working on now here!
-      </p>
+      <div style={{paddingLeft: "20%", paddingRight: "20%"}}>
+        <p>
+          <br/>
+          The Terraformers are constantly working to improve our rover and reach out to the community. 
+          Find out what we’re working on now here!
+        </p>
+      </div>
     </div>
   );
 }
@@ -192,7 +195,7 @@ export function SupportSection() {
   }, []);
   
   return (
-    <div>
+    <div style={{paddingLeft: "20%", paddingRight: "20%"}}>
       <h1 id="support"> Support Us! </h1>
       { onPhone ?
         <div>
@@ -235,8 +238,9 @@ export function SupportSection() {
               <br/><br/>
               Sponsors get 501c3 tax benefits.
             </p>
-            {/* <VertSpacer/>
-            <LearnMoreButton text="Learn more"/> */}
+
+            <VertSpacer/>
+            <Link href="/support"> Learn More </Link>
           </div>
         </div>
       }
@@ -261,19 +265,21 @@ export function ContactsSection() {
 /** Layout of the home page */
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-betsween p-10">
+    <main className="flex min-h-screen flex-col items-center p-10" style={{overflowX: "hidden"}}>
       <DynamicHeader/>
-
-      <AboutSection/>
-      <VertSpacer/>
       
-      <ProjectsSection/>
-      <VertSpacer/>
+      <div>
+        <AboutSection/>
+        <VertSpacer/>
+        
+        <ProjectsSection/>
+        <VertSpacer/>
 
-      <TeamSection/>
-      <VertSpacer/>
-      
-      <SupportSection/>
+        <TeamSection/>
+        <VertSpacer/>
+        
+        <SupportSection/>
+      </div>
 
       <DynamicFooter/>
     </main>
