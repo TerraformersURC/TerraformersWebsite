@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import RotatedContentBar from "./components/RotatedContentBar";
-import VertSpacer from "./components/VertSpacer";
-import MemberExplorer from "./components/MemberExplorer";
+import RotatedContentBar from "./components/rotated-content-bar";
+import VertSpacer from "./components/vert-spacer";
+import MemberExplorer from "./components/member-explorer";
 
 import Image from "next/image";
 import TerraformersImg from "../../public/WhoAreTheTerraformers.png";
 import { DynamicFooter, DynamicHeader } from ".";
 
-import Membercard from "./components/MemberCard";
+import Membercard from "./components/member-card";
 
 import useSWR from 'swr';
 

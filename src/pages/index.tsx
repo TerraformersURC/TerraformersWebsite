@@ -1,10 +1,10 @@
 import Background from "./components/background";
 import Navbar from "./components/navbar";
-import Membercard from "./components/MemberCard";
-import VertSpacer from "./components/VertSpacer";
-import LearnMoreButton from "./components/LearnMoreButton";
+import Membercard from "./components/member-card";
+import VertSpacer from "./components/vert-spacer";
+import LearnMoreButton from "./components/learn-more-button";
 
-import RotatedContentBar from "./components/RotatedContentBar";
+import RotatedContentBar from "./components/rotated-content-bar";
 
 import Image from "next/image";
 
@@ -13,7 +13,7 @@ import Arm from "../../public/Arm.png";
 import Suspension from "../../public/Suspension.png";
 import TerraformersImg from "../../public/WhoAreTheTerraformers.png";
 import OurRover from "../../public/OurRover.png";
-import MemberExplorer from "./components/MemberExplorer";
+import MemberExplorer from "./components/member-explorer";
 import Head from "next/head";
 
 import dynamic from 'next/dynamic'

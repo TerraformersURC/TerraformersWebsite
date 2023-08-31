@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Membercard from "./MemberCard";
+import Membercard from "./member-card";
 
 import useSWR from 'swr';
 

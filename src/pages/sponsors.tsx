@@ -83,7 +83,7 @@ export function FlyerDetail() {
   </div>);
 }
 
-export default function Support() {
+export default function Sponsors() {
   return (<main className="flex min-h-screen flex-col items-center justify-between p-10">
     <DynamicHeader/>
 

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import RotatedContentBar from "./components/RotatedContentBar";
-import VertSpacer from "./components/VertSpacer";
+import RotatedContentBar from "./components/rotated-content-bar";
+import VertSpacer from "./components/vert-spacer";
+import PhotoExplorer from "./components/photo-explorer"
 
 import Image from "next/image";
 import Rover from "../../public/Rover.png";
@@ -74,6 +75,8 @@ export default function About() {
     return (<main className="flex min-h-screen flex-col items-center justify-betsween p-10">
         <DynamicHeader/>
 
+        <PhotoExplorer/>
+        
         <AboutContent/>
 
         <DynamicFooter/>

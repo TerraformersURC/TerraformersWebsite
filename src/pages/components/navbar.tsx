@@ -10,9 +10,10 @@ import { useEffect, useState } from 'react';
 const inter = Inter({ subsets: ['latin'] })
 const navbar_elements = [
   {text: "Home", key: "HomeBtn", href: "/", scroll: "home"},
-  {text: "Projects", key: "ProjectsBtn", href: "projects", scroll: "about"},
+  {text: "Ahout", key: "ProjectsBtn", href: "about", scroll: "about"},
+  {text: "Projects", key: "ProjectsBtn", href: "projects", scroll: "projects"},
   {text: "Team", key: "TeamBtn", href: "team", scroll: "team"},
-  {text: "Sponsors", key: "SupportBtn", href: "support", scroll: "support"},
+  {text: "Sponsors", key: "SupportBtn", href: "sponsors", scroll: "support"},
 ]
 
 const button_on_color = '#770000';
