@@ -23,7 +23,7 @@ export function AboutContent(){
     }, []);
   
     return !onPhone ? 
-      <RotatedContentBar> { /* Computer View */}
+      <div>
         <h1 id="about"> About the Terraformers </h1>
   
         <div className="content-flex-container">
@@ -39,14 +39,18 @@ export function AboutContent(){
   
           <p>
             <br/><br/><br/>
-            We’re a group of programmers, engineers, designers, and amateur scientists from UMD out to 
-            create a functional rover here on Earth. We’re competing in Utah in 2024 with other rovers 
-            from around the globe, and will hopefully bring back a win for UMD! 
+            We’re the Terraformers, UMD’s club for conquering Mars right here on Earth! We’re building, 
+            programming, and perfecting a real Mars Rover to compete in a competition for universities 
+            around the globe this summer. Our team of engineers, programers, and scientists are working 
+            hard to get our rover ship shape for our competition in Utah, and bring home a win! Our rover 
+            will be doing experiments, conquering obstacles, and all sorts of things as if it were really 
+            on the red planet. Whether you’d like to join the team, sponsor the journey, or just look around, 
+            we’re happy to have you aboard!
           </p>
         </div>
-      </RotatedContentBar>
+      </div>
         :
-      <RotatedContentBar> { /* Phone View */}
+      <div> { /* Phone View */}
         <h1 id="about"> About the Terraformers </h1>
   
         <Image
@@ -62,23 +66,27 @@ export function AboutContent(){
         <div>
           <p>
             <br/><br/>
-            We’re a group of programmers, engineers, designers, and amateur scientists from UMD out to
-            create a functional rover here on Earth. We’re competing in Utah in 2024 with other rovers 
-            from around the globe, and will hopefully bring back a win for UMD! 
+            We’re the Terraformers, UMD’s club for conquering Mars right here on Earth! We’re building, 
+            programming, and perfecting a real Mars Rover to compete in a competition for universities 
+            around the globe this summer. Our team of engineers, programers, and scientists are working 
+            hard to get our rover ship shape for our competition in Utah, and bring home a win! Our rover 
+            will be doing experiments, conquering obstacles, and all sorts of things as if it were really 
+            on the red planet. Whether you’d like to join the team, sponsor the journey, or just look around, 
+            we’re happy to have you aboard!
           </p>
         </div>
         <VertSpacer/>
-      </RotatedContentBar>;
+      </div>;
 }
 
 export default function About() {
     return (<main className="flex min-h-screen flex-col items-center justify-betsween p-10">
         <DynamicHeader/>
 
-        <PhotoExplorer/>
-        
         <AboutContent/>
 
+        <PhotoExplorer/>
+        
         <DynamicFooter/>
     </main>);
 }

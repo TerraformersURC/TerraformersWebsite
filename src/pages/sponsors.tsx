@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import VertSpacer from "./components/VertSpacer";
+import VertSpacer from "./components/vert-spacer";
 
 import Image from "next/image";
 import TearsAndRewardsTable from "../../public/sponsorship_tears_and_rewards.png"

@@ -68,13 +68,14 @@ export function AboutSection() {
           alt=""
         />
 
-        <p>
+        <p style={{flex: 2}}>
           <br/><br/><br/>
-          We’re a group of programmers, engineers, designers, and amateur scientists from UMD out to 
+          We’re a group of programmers, engineers, designers, and amateur scientists from UMD out to
           create a functional rover here on Earth. We’re competing in Utah in 2024 with other rovers 
           from around the globe, and will hopefully bring back a win for UMD! 
         </p>
       </div>
+      <VertSpacer/>
     </RotatedContentBar>
       :
     <RotatedContentBar> { /* Phone View */}
@@ -107,7 +108,7 @@ export function ProjectsSection() {
   return (
     <div>
       <h1 id="projects"> Projects </h1>
-      <div className="content-flex-container">
+      <div className="content-flex-container" style={{paddingLeft: "10%", paddingRight: "15%"}}>
         <Image
           priority
           className="content-img"
@@ -121,6 +122,7 @@ export function ProjectsSection() {
         <Image
           priority
           className="content-img"
+          style={{marginRight: "10rem"}}
           id="arm"
           src={Arm}
           width={450}

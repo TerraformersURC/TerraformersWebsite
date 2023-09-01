@@ -1,6 +1,6 @@
 import Head from "next/head"
 import Navbar from "./navbar";
-import VertSpacer from "./VertSpacer";
+import VertSpacer from "./vert-spacer";
 import Background from "./background";
 
 /** Contacts Section
