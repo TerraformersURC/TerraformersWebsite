@@ -7,7 +7,6 @@ type Member = {
     name: string,
     desc: string,
     linkedin: string,
-    instagram: String,
     src: string
 }  
 
@@ -28,13 +27,12 @@ export default function MemberExplorer() {
     return (
         <div className="member-explorer">
             {
-                members.map( (member: { name: any; src: any; desc: any; linkedin: any; instagram: any; }) => (
+                members.map( (member: { name: any; src: any; desc: any; linkedin: any; }) => (
                     <Membercard 
                         name={member.name}
                         src={member.src}
                         desc={member.desc}
                         linkedin={member.linkedin}
-                        instagram={member.instagram}
                         key={member.src}
                     />
                 ))

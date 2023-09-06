@@ -1,16 +1,16 @@
 import { Box, Card, CardContent, CardMedia, Typography, Divider, Paper, CardActions, Button } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import Link from "next/link";
 
 import { FaLinkedin, FaInstagram } from 'react-icons/fa';
 
 const LinkedInIcon = () => <FaLinkedin size={32} />;
-const InstaIcon = () => <FaInstagram size={32} />;
 
 const CenterBox = styled(Box)({
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  minHeight: "50vh",
+  minHeight: "50vh"
 });
 
 const BlackCard = styled(Card)({
@@ -41,8 +41,7 @@ export default function MemberCard(props: any) {
         </Typography>
         </BlackCardContent>
         <CardActions>
-        <FaLinkedin size={32} href={props.linkedin}/>
-        <FaInstagram size={32} href={props.instagram}/>
+        <Link href={props.linkedin}> <LinkedInIcon/> </Link>
         </CardActions>
       </BlackCard>
     </Box>

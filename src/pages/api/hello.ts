@@ -12,7 +12,6 @@ type Member = {
   name: string,
   desc: string,
   linkedin: string,
-  instagram: String,
   src: string
 }
 
@@ -21,12 +20,13 @@ export default function handler(
   res: NextApiResponse<Data>
 ) {
   res.status(200).json({ people: [
-      {name: "Mikolaj Kostrzewa", desc: "Project Manager", linkedin: "", instagram: "https://www.instagram.com/koste707/", src: "people/Mikolaj.jpg"},
-      {name: "Ankit Verghese", desc: "Chief Engineer", linkedin: "https://linkedin.com/in/ankit-verghese", instagram: "https://www.instagram.com/_agv108/", src: "people/Ankit.jpg"},
-      {name: "Lucas Ballmer", desc: "Attorney General", linkedin: "", instagram: "", src: "people/Lucas.jpg"},
-      {name: "Grace Herron", desc: "Editor in Chief", linkedin: "", instagram: "people/Grace.jpg", src: "people/Grace.jpg"},
-      {name: "Nick Thoennes", desc: "Design Lead", linkedin: "https://linkedin.com/in/nicholas-thoennes-166a02252", instagram: "https://www.instagram.com/_agv108/", src: "people/Nick.jpg"},
-      {name: "Patrick Sullivan", desc: "Software", linkedin: "https://linkedin.com/in/patrick-sullivan-03172b265", instagram: "https://www.instagram.com/patrickttsulliv/", src: "people/Patrick.jpg"}
+      {name: "Mikolaj Kostrzewa", desc: "Project Manager", linkedin: "", src: "people/Mikolaj.jpg"},
+      {name: "Ankit Verghese", desc: "Chief Engineer", linkedin: "https://linkedin.com/in/ankit-verghese", src: "people/Ankit.jpg"},
+      {name: "Lucas Ballmer", desc: "Attorney General", linkedin: "https://www.linkedin.com/in/lucas-ballmer-a3770324a", src: "people/Lucas.jpg"},
+      {name: "Grace Herron", desc: "Editor in Chief", linkedin: "https://www.linkedin.com/in/grace-herron-88a115184/", src: "people/Grace.jpg"},
+      {name: "Nick Thoennes", desc: "Design Lead", linkedin: "https://www.linkedin.com/in/nick-thoennes-166a02252", src: "people/Nick.jpg"},
+      {name: "Patrick Sullivan", desc: "Software", linkedin: "https://linkedin.com/in/patrick-sullivan-03172b265", src: "people/Patrick.jpg"},
+      {name: "Joseph Kleinman", desc: "Media Chair", linkedin: "https://www.linkedin.com/in/joseph-kleinman-b96730283", src: "people/Joseph.jpg"}
     ]
   })
 }

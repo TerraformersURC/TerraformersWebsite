@@ -15,7 +15,6 @@ type Member = {
     name: string,
     desc: string,
     linkedin: string,
-    instagram: String,
     src: string
 }
 
@@ -58,17 +57,17 @@ export function TeamSection() {
           </div>
         </div>
         <VertSpacer/>
-  
-        <div style={{width: "100%", textAlign: "center"}}>
-            {members.map( (member: { name: any; src: any; desc: any; linkedin: any; instagram: any; }) => (
+        <div style={{width: "auto", textAlign: "center"}}>
+            {members.map( (member: { name: any; src: any; desc: any; linkedin: any; }) => (
+              <div style={{marginTop: "10vh", display: "inline-flex"}}>
                 <Membercard 
-                    name={member.name}
-                    src={member.src}
-                    desc={member.desc}
-                    linkedin={member.linkedin}
-                    instagram={member.instagram}
-                    key={member.src}
+                  name={member.name}
+                  src={member.src}
+                  desc={member.desc}
+                  linkedin={member.linkedin}
+                  key={member.src}
                 />
+              </div>
             ))}
         </div>
         <VertSpacer/>
