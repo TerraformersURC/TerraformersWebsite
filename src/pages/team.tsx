@@ -61,13 +61,12 @@ export function TeamSection() {
         <VertSpacer/>
         <div style={{width: "auto", textAlign: "center", marginLeft: "5vw"}}>
             {members.map( (member: { name: any; src: any; desc: any; linkedin: any; }) => (
-              <div style={{marginTop: "10vh", display: "inline-flex"}}>
+              <div style={{marginTop: "10vh", display: "inline-flex"}} key={member.src}>
                 <Membercard 
                   name={member.name}
                   src={member.src}
                   desc={member.desc}
                   linkedin={member.linkedin}
-                  key={member.src}
                 />
               </div>
             ))}

@@ -41,7 +41,7 @@ export default function MemberCard(props: any) {
         </Typography>
         </BlackCardContent>
         <CardActions>
-        <Link href={props.linkedin}> <LinkedInIcon/> </Link>
+        <a target="_blank" href={props.linkedin}> <FaLinkedin size={32} href={props.linkedin}/> </a>
         </CardActions>
       </BlackCard>
     </Box>

@@ -45,7 +45,7 @@ export function RewardsProgram() {
 
 export function FlyerDetail() {
   return (<div style={{width: "70%"}}>
-    <Link href="\sponsor_flyer.pdf" target="_blank" style={{paddingLeft: "20%"}}>
+    <Link href="/sponsor_flyer.pdf" target="_blank" style={{paddingLeft: "20%"}}>
       <Image
         priority
         style={{width: "100%"}}
@@ -56,7 +56,7 @@ export function FlyerDetail() {
       />
     </Link>
     <p>
-      <Link href="\sponsor_flyer.pdf" target="_blank"> Here </Link> is the flyer we hand out to our sponsors.
+      <Link href="/sponsor_flyer.pdf" target="_blank"> Here </Link> is the flyer we hand out to our sponsors.
     </p>
     
     <VertSpacer/>
