@@ -5,11 +5,13 @@ import MemberExplorer from "./components/member-explorer";
 
 import Image from "next/image";
 import TerraformersImg from "../../public/WhoAreTheTerraformers.png";
+import StudentFlyer from "../../public/student_flyer.png"
 import { DynamicFooter, DynamicHeader } from ".";
 
 import Membercard from "./components/member-card";
 
 import useSWR from 'swr';
+import Link from "next/link";
 
 type Member = {
     name: string,
@@ -57,7 +59,7 @@ export function TeamSection() {
           </div>
         </div>
         <VertSpacer/>
-        <div style={{width: "auto", textAlign: "center"}}>
+        <div style={{width: "auto", textAlign: "center", marginLeft: "5vw"}}>
             {members.map( (member: { name: any; src: any; desc: any; linkedin: any; }) => (
               <div style={{marginTop: "10vh", display: "inline-flex"}}>
                 <Membercard 
@@ -70,6 +72,25 @@ export function TeamSection() {
               </div>
             ))}
         </div>
+        
+        <VertSpacer/>
+
+        <div style={{textAlign: "center", width: "100%"}}>
+          <Link href="\terraformers_interest_flyer.pdf" target="_blank" style={{paddingLeft: "20%"}}>
+            <Image
+              priority
+              style={{paddingLeft: "20%", width: "80%", flex: 1}}
+              src={StudentFlyer}
+              width={450}
+              height={450}
+              alt=""
+            />
+          </Link>
+          <p>
+            <Link href="\terraformers_interest_flyer.pdf" target="_blank"> This </Link> is an example of a flyer we hand out to students.
+          </p>
+        </div>
+
         <VertSpacer/>
   
     </div>);

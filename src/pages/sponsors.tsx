@@ -3,7 +3,6 @@ import VertSpacer from "./components/vert-spacer";
 
 import Image from "next/image";
 import TearsAndRewardsTable from "../../public/sponsorship_tears_and_rewards.png"
-import ExampleStudentFlyer from "../../public/student_flyer.png"
 import SponsorFlyer from "../../public/sponsor_flyer_icon.png"
 import { DynamicFooter, DynamicHeader } from ".";
 import Link from "next/link";
@@ -46,40 +45,21 @@ export function RewardsProgram() {
 
 export function FlyerDetail() {
   return (<div style={{width: "70%"}}>
-    <div style={{width: "100%", display: "flex"}}>
-      <Link href="\sponsor_flyer.pdf" style={{flex: 1, paddingLeft: "20%"}}>
-        <Image
-          priority
-          style={{width: "10vw"}}
-          src={SponsorFlyer}
-          width={450}
-          height={450}
-          alt=""
-        />
-      </Link>
-      
-      <p>
-        <Link href="\sponsor_flyer.pdf"> Here </Link> is the flyer we hand out to our sponsors.
-      </p>
-    </div>
-
-    <VertSpacer/>
+    <Link href="\sponsor_flyer.pdf" target="_blank" style={{paddingLeft: "20%"}}>
+      <Image
+        priority
+        style={{width: "100%"}}
+        src={SponsorFlyer}
+        width={450}
+        height={450}
+        alt=""
+      />
+    </Link>
+    <p>
+      <Link href="\sponsor_flyer.pdf" target="_blank"> Here </Link> is the flyer we hand out to our sponsors.
+    </p>
     
-    <div style={{width: "100%", display: "flex"}}>
-      <Link href="\terraformers_interest_flyer.pdf" style={{flex: 1, paddingLeft: "20%"}}>
-        <Image
-          priority
-          style={{width: "10vw", flex: 1}}
-          src={ExampleStudentFlyer}
-          width={450}
-          height={450}
-          alt=""
-        />
-      </Link>
-      <p>
-        <Link href="\terraformers_interest_flyer.pdf"> This </Link> is an example of a flyer we hand out to students.
-      </p>
-    </div>
+    <VertSpacer/>
   </div>);
 }
 
