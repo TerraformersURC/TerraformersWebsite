@@ -192,13 +192,13 @@ h1 {
 #arm {
   max-width: 32%;  
   height: auto;
-  margin-right: 10%;
-  margin-left: 3%;
+  margin-right: 3%;
+  margin-left: 10%;
   object-fit: cover;
 }
 
 #suspension {
-  max-width: 42%; 
+  max-width: 42%;
   height: auto;
   margin-left: 10%;
   margin-right: 3%;

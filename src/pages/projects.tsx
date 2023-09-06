@@ -10,7 +10,27 @@ import { DynamicFooter, DynamicHeader } from ".";
 export function ProjectsSection() {
     return (
       <div>
+        
+        
+      </div>
+    );
+}
+
+export default function Projects() {
+    return (<main className="flex min-h-screen flex-col items-center justify-between p-10">
+        <DynamicHeader/>
         <h1 id="projects"> Projects </h1>
+        
+        <ProjectsSection/>
+
+        <p>
+          <br/>
+          The Terraformers are constantly working to improve our rover and reach out to the community. 
+          Find out what we’re working on now here!
+        </p>
+
+        <VertSpacer/>
+
         <div className="content-flex-container">
           <Image
             priority
@@ -21,7 +41,14 @@ export function ProjectsSection() {
             height={450}
             alt=""
           />
-          <div></div>
+          <p>
+            Our novel Tri Tracks extend our suspension to overcome the smaller debris on a simulated martian surface.
+          </p>
+        </div>
+
+        <VertSpacer/>
+
+        <div className="content-flex-container">
           <Image
             priority
             className="content-img"
@@ -31,21 +58,12 @@ export function ProjectsSection() {
             height={450}
             alt=""
           />
+          <p>
+            An interesting rendition of a potential arm reduces the moving parts required to achieve 6 degrees of freedom.
+          </p>
         </div>
-        <p>
-          <br/>
-          The Terraformers are constantly working to improve our rover and reach out to the community. 
-          Find out what we’re working on now here!
-        </p>
-      </div>
-    );
-}
 
-export default function Projects() {
-    return (<main className="flex min-h-screen flex-col items-center justify-between p-10">
-        <DynamicHeader/>
-        
-        <ProjectsSection/>
+        <VertSpacer/>
 
         <DynamicFooter/>
     </main>);
